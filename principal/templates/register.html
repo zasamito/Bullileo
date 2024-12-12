@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="{% static 'estilos/register.css' %}">
+    <link rel="icon" href="{% static 'images/logo2.png' %}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <ul class="nav-menu">
+                <li> <a href="/" class="nav-link">Inicio</a> </li>
+                <li> <a href="/#room" class="nav-link">Habitaciones</a> </li>
+                <li> <a href="/#gallery" class="nav-link">Fotos</a> </li>
+                <li> <a href="/#contact" class="nav-link">Contactos</a> </li>
+                <li> <a href="/#coment" class="nav-link">Comentarios</a> </li>
+                <li> <a href="/Login/" class="nav-link">Iniciar Sesión</a> </li>
+              </ul>
+          
+            <div class="hambuger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="MainRegister">
+            {% if user.is_authenticated %}
+            <script>window.location.href = '/Inicio/';</script>
+            {% else %}
+            <h2>Registrarse</h2>
+            <form id="Formulario" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Registrarse">
+            </form>
+            <p>¿Ya tienes cuenta? <a href="/Login/">¡Inicia sesión!</a></p>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="/Privacy/">Política de Privacidad</a></li>
+            <li><a href="/Terms/">Términos y Condiciones</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
+    <script src="{% static 'Register.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'estilos/login.css' %}"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'images/logo2.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <title>Iniciar Sesión</title>
+</head>
+    
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+          <nav> 
+            <ul class="nav-menu">
+              <li> <a href="/" class="nav-link">Inicio</a> </li>
+              <li> <a href="/#room" class="nav-link">Habitaciones</a> </li>
+              <li> <a href="/#gallery" class="nav-link">Fotos</a> </li>
+              <li> <a href="/#contact" class="nav-link">Contactos</a> </li>
+              <li> <a href="/#coment" class="nav-link">Comentarios</a> </li>
+              <li> <a href="/Register/" class="nav-link">Registrarse</a> </li>
+            </ul>
+            
+            <div class="hambuger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <div class="mainLogin">
+         {% if user.is_authenticated %}
+        <script>window.location.href = '/Inicio/{{ user.id }}';</script>
+         {% else %}
+         <h2>Iniciar sesión</h2>
+        <form id="Formulario" method="POST">
+            {{form}}
+             {% csrf_token %}
+            <input value="Iniciar Sesion" type="submit">
+        </form>
+         <p>¿Aun no tienes cuenta? <a href="/Register/">Registrate ya!</a></p>
+         {% endif %}
+    </div>
+
+    <footer>
+      <ul>
+          <li><a href="/Privacy/">Política de Privacidad</a></li>
+          <li><a href="/Terms/">Términos y Condiciones</a></li>
+      </ul>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

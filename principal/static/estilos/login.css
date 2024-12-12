@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+  background-color: #FEF2E6; /* Fondo beige claro del logo */
+  color: #333333; /* Texto oscuro */
+}
+
+header {
+  height: 8vh;
+  background-color: #3fc1a1; /* Color de fondo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Espaciado interno horizontal */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu .nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #FFF6EA; /* Beige claro */
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-menu .nav-link:hover {
+  color: #3fc1a1; /* Gris oscuro */
+}
+
+.hambuger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #FFF6EA; /* Beige claro */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Main Login */
+.mainLogin {
+  width: 90%;
+  max-width: 400px;
+  background-color: #FFF6EA; /* Fondo beige claro */
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.mainLogin h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000; /* Marrón claro */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #C1B086;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: #3F9CC1; /* Azul del logo */
+  box-shadow: 0px 0px 5px rgba(63, 156, 193, 0.5);
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3fc1a1; /* Azul del logo */
+  color: #FFF6EA; /* Beige claro */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: #C1B086; /* Marrón claro */
+}
+
+.mainLogin p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #333333; /* Texto oscuro */
+}
+
+.mainLogin p a {
+  text-decoration: none;
+  color: #3fc1a1; /* Azul del logo */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.mainLogin p a:hover {
+  color: #C1B086; /* Marrón claro */
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #3fc1a1; /* Azul del logo */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: #FFF6EA; /* Beige claro */
+  text-align: center; /* Alinea el texto de los elementos al centro */
+}
+
+footer ul {
+  display: inline-block; /* Cambiar flex a inline-block para centrar mejor */
+  text-align: center; /* Asegura que el texto esté alineado dentro de la lista */
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  display: inline; /* Cambia los elementos de bloque a inline para evitar espacios innecesarios */
+  margin: 0 10px; /* Añade espacio horizontal entre los elementos */
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #FFF6EA; /* Beige claro */
+  transition: color 0.3s ease-in-out;
+}
+
+footer ul li a:hover {
+  color: #C1B086; /* Marrón claro */
+}
+
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hambuger {
+    display: block;
+  }
+
+  .mainLogin {
+    width: 90%;
+  }
+}
